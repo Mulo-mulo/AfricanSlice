@@ -1,80 +1,152 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>African Slice</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+	
+	var i = 0; // Start point
+	var images = [];
+	var time = 3000;
 
-<html>
+	// Image List
+	images[0] = 'image1.jpg';
+	images[1] = 'image2.jpg';
+	images[2] = 'image3.jpg';
+	images[3] = 'image4.jpg';
 
-<head>
+	// Change Image
+	function changeImg(){
+		document.slide.src = images[i];
 
-<link href="http://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
+		if(i < images.length - 1){
+			i++;
+		} else {
+			i = 0;
+		}
 
+		setTimeout("changeImg()", time);
+	}
 
-<link rel="stylesheet" type="text/css" href="style.css"/>
-<title>African Slice</title>
+	window.onload = changeImg;
+	
+	$(document).ready(function(){
+	  // Add smooth scrolling to all links
+	  $("a").on('click', function(event) {
 
-</head>
+		// Make sure this.hash has a value before overriding default behavior
+		if (this.hash !== "") {
+		  // Prevent default anchor click behavior
+		  event.preventDefault();
 
+		  // Store hash
+		  var hash = this.hash;
 
-<body>
+		  // Using jQuery's animate() method to add smooth page scroll
+		  // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+		  $('html, body').animate({
+			scrollTop: $(hash).offset().top
+		  }, 800, function(){
+	   
+			// Add hash (#) to URL when done scrolling (default click behavior)
+			window.location.hash = hash;
+		  });
+		} // End if
+	  });
+	});
+	</script>
+	
+	
 
-<div>
-	<div class="header">
-		<div class="innerheader"> 
-			<div class="logocontainer"> 
-                            
-			<h1>African<span>Slice</span></h1>
-			
-			</div>
-			
-			<ul class="navigation">
-			<a href="index.html"><li>Home</li></a>
-			<a href="index.html"><li>About</li></a>
-			<a href="index.html"><li>Portfolio</li></a>
-			<a href="index.html"><li>Contact US</li></a>
-			</ul>
-			
-		</div>
+  </head>
+  <body class="body">
+
+  <div class="header">
+  <div class="innerheader">
+    <h2 class="logo">African Slice</h2>
+    <input type="checkbox" id="chk">
+    <label for="chk" class="show-menu-btn">
+      <i class="fas fa-ellipsis-h"></i>
+    </label>
+
+    <ul class="menu">
+      <a href="index.html">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Works</a>
+      <a href="#">Contact</a>
+      <label for="chk" class="hide-menu-btn">
+        <i class="fas fa-times"></i>
+      </label>
+    </ul>
 	</div>
-	
-<div id="banner">
-	<figure>
-		<a href="about.html"><img src="as1.jpg"></a>
-		<a href="portfolio.html"><img src="as2.jpg"></a>
-		<a href="contact.html"><img src="as3.jpg"></a>
-		<a href="other.html"><img src="as4.jpg"></a>
-		
-	</figure>
-	
-	
-</div>
-
-
- <div id="content">
-	<p>The Content Goes here</p>
-</div>
-
-
-<TABLE BORDER=1 id="table">
-  <CAPTION>Table Caption</CAPTION>
+  </div>
   
+  <div class="headback"></div>
   
+  <div class="slide">
   
-  <TR><TD>Row1 Col1 Data</TD>
-</TABLE>
+	<img name="slide" class="slider" >
+  
+  </div>
+
+  
 
 
+<div class="content">
+    <center>
+      
+    </center>
+ 
+
+
+
+<h1>Smooth Scroll</h1>
+<div class="headback" id="section1"></div>
+<div class="main" >
+  <h2>Section 1</h2>
+  <p>Click on the link to see the "smooth" scrolling effect.</p>
+  <a href="#section2">Click Me to Smooth Scroll to Section 2 Below</a>
+  <p>Note: Remove the scroll-behavior property to remove smooth scrolling.</p>
+  
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/WoDf0ZIgAjU" frameborder="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 
 </div>
-
 <div>
-<footer>
-<p>this is the footer</p>
-</footer>
+<p>
+      The standard Lorem Ipsum passage, used since the 1500s
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+
+1914 translation by H. Rackham
+"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+
+Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+
+1914 translation by H. Rackham
+"On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
+    </p>
+	</div>
+
+<div class="headback" id="section2"></div>
+
+<div class="main">
+  <h2>Section 2</h2>
+  <a href="#section1">Click Me to Smooth Scroll to Section 1 Above</a>
 </div>
 
-</body> 
-
+ 
+    
+    </div>
+  </body>
+  <footer>
+  <p>footer</p>
+  </footer>
 </html>
